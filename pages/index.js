@@ -16,15 +16,16 @@ export default function Home({ allData }) {
     <Layout>
       <h1>Page Turners Society</h1>
       <div className="list-group">
-        {allData.map(({ id, name }) => (
-          <Link
-            key={id}
-            href={`/people/${id}`}
-            className="list-group-item list-group-item-action"
-          >
-            {name}
-          </Link>
-        ))}
+        {allData &&
+          allData.map(({ id, name }) => (
+            <Link
+              key={id}
+              href={`/people/${id}`}
+              className="list-group-item list-group-item-action"
+            >
+              {name}
+            </Link>
+          ))}
       </div>
     </Layout>
   );
